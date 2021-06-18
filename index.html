@@ -4,11 +4,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bowlby+One+SC&family=Josefin+Sans&family=Passion+One&family=Quicksand&display=swap" rel="stylesheet">
+
     <title>Lithouse Budget</title>
 </head>
-<body>
-    
+<body class="blue-grey darken-3">
+
+    <header class="blue-grey darken-4 section">
+        <!-- <h2 class="center blue-text text-lighten-4">LiteHouse Budget</h2> -->
+        <h2 class="center blue-text text-lighten-4">LITEHOUSE BUDGET</h2>
+        <p class="flow-text grey-text center text-lighten-2">
+            Monthly money tracker
+        </p>
+    </header>
+
+    <div class="container section">
+        <div class="row">
+            <div class="col s12 m6">
+                <form class="card z-depht-0">
+                    <div class="card-content">
+                        <span class="card-title blue-grey-text text-darken-3">Add Item:</span>
+                        <div class="input-field">
+                            <input type="text" id="name">
+                            <label for="name" class="blue-text text-lighten-2">Item Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="cost">
+                            <label for="cost" class="blue-text text-lighten-2">Item Cost ($):</label> <!-- for="name"? -->
+                        </div>
+                        <div class="input-field center">
+                            <button class="btn-large yellow darken-1 blue-grey-text text-darken-3">ADD ITEM</button>
+                        </div>
+                        <div class="input-field center">
+                            <p class="red-text" id="error"></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col s12 m5 push-m1">
+                <div class="canvas">Graph</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script> -->
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // firebase.analytics();
+    const db = firebase.firestore();
+
+    </script>
+    <script type="module" src="firebaseDb.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="index.js"></script>
     <script src="graph.js"></script>
 </body>

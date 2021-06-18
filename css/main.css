@@ -1,0 +1,22 @@
+body {
+    /* font-family: 'Josefin Sans', sans-serif; */
+    font-family: 'Quicksand', sans-serif;
+}
+
+h2 {
+    margin: 10px 0;
+    /* font-family: 'Alfa Slab One', cursive; */
+    /* font-family: 'Bowlby One SC', cursive; */
+    /* font-family: 'Passion One', cursive; */
+    /* font-family: 'Quicksand', sans-serif; */
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+p {
+    margin: 10px 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+heacer {
+    margin-bottom: 40px;
+}
