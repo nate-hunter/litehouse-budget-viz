@@ -47,3 +47,7 @@ heacer {
 .expense-table {
     margin: 0 0 0 0;
 }
+
+#expense-table-head {
+    background-color: #455a64 ;
+}

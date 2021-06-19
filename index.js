@@ -1,9 +1,10 @@
 // DOCUMENT ELEMENTS
 const form = document.querySelector('form');
-const name = document.querySelector('#name')
-const cost = document.querySelector('#cost')
-const error = document.querySelector('#error')
-const actionList = document.querySelector('#action-list')
+const name = document.querySelector('#name');
+const cost = document.querySelector('#cost');
+const error = document.querySelector('#error');
+const actionList = document.querySelector('#action-list');
+const expenseItems = document.querySelector('#expense-table-body');
 
 const actions = [];
 
@@ -19,10 +20,29 @@ const getExpenses = async () => {
 
 // Display 'Expenses' as a list on DOM
 const displayExpenses = (actions) => {
-    actions?.forEach(action => {
-        const li = document.createElement('li');
-        li.appendChild(document.createTextNode(`+ ${action.name}: $${action.cost}  -  [ Edit Btn ]    [ Delete Btn ]`))
-        actionList.appendChild(li)
+    actions?.forEach(item => {
+        const tr = document.createElement('tr');
+        const tdName = document.createElement('td');
+        const tdCost = document.createElement('td');
+        tdName.innerHTML += item.name;
+        tdCost.innerHTML += `$${item.cost}`;
+        tr.appendChild(tdName);
+        tr.appendChild(tdCost);
+
+        // Buttons:
+        const tdEditBtn = document.createElement('td')
+        const editBtn = document.createElement('button');
+        editBtn.innerHTML += 'Edit';
+        tdEditBtn.appendChild(editBtn)
+        tr.appendChild(tdEditBtn);
+
+        const tdDeleteBtn = document.createElement('td')
+        const deleteBtn = document.createElement('button');
+        deleteBtn.innerHTML += 'Delete';
+        tdDeleteBtn.appendChild(deleteBtn)
+        tr.appendChild(tdDeleteBtn);
+        
+        expenseItems.appendChild(tr);
     })
 }
     
