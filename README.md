@@ -1,3 +1,3 @@
 # Litehouse Budget Viz
 
-- Pie chart of monthly expenses for Litehouse project.
+- Pie chart of monthly expenses to be implemented itno Litehouse project.

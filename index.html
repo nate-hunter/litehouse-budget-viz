@@ -17,13 +17,15 @@
 
     <header class="blue-grey darken-4 section">
         <!-- <h2 class="center blue-text text-lighten-4">LiteHouse Budget</h2> -->
-        <h2 class="center blue-text text-lighten-4">LITEHOUSE BUDGET</h2>
+        <!-- <img src="./images/lighthouse-logo-01.jpg" alt="litehouse-logo" class='center brand-logo logo'> -->
+        <h2 class="center blue-text text-lighten-4"><img src="./images/lighthouse-logo-01.jpg" alt="litehouse-logo" class='center brand-logo logo-title'> LITEHOUSE BUDGET</h2>
         <p class="flow-text grey-text center text-lighten-2">
             Monthly money tracker
         </p>
     </header>
 
     <div class="container section">
+
         <div class="row">
             <div class="col s12 m6">
                 <form class="card z-depht-0">
@@ -47,7 +49,33 @@
                 </form>
             </div>
             <div class="col s12 m5 push-m1">
-                <div class="canvas">Graph</div>
+                <!-- <h5 class="yellow-text text-darken-1">Graph...</h5> -->
+                <div class="canvas">
+                </div>
+                
+            </div>
+        </div>
+        <table class="yellow-text text-darken-1 card blue-grey highlight centered  responsive expense-table">
+            <thead>
+                <tr>
+                    <th>Item Name:</th>
+                    <th>Item Cost:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Drinks</td>
+                    <td>$250</td>
+                    <td><button>Edit</button></td>
+                    <td><button>Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="card blue-grey expense-table">
+            <div class="card-content">
+                <h5 class="card-title yellow-text text-darken-1">Table of Expenses:</h5>
+                <ul id="action-list" class="yellow-text text-darken-1">
+                </ul>
             </div>
         </div>
     </div>
@@ -72,9 +100,10 @@
     const db = firebase.firestore();
 
     </script>
-    <script type="module" src="firebaseDb.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js" integrity="sha512-wNH6xsp2n8CfB91nrBtfc4sfLwYPBMjSWVUwQOp60AYYXH6i8yCwuKFZ4rgK2i6pQek/b+bSyR7b01/922IBzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js" integrity="sha512-a+/SD0dbGeXTN4AA5F1dDZqsPvXKKyS1bvU2z5ElpKNJ4xQlOMUs/1+suA+j+kj5nAAya+VmT5HUKZmazluxVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="index.js"></script>
     <script src="graph.js"></script>
 </body>
