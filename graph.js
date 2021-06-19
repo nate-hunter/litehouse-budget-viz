@@ -197,6 +197,6 @@ const handleMouseOut = (d, i, n) => {
 
 const handleClick = (d) => {
     const id = d.data.id;
-    alert('are you sure')
-    db.collection('expenses').doc(id).delete();
+    const confirmation = confirm('Are you sure you want to delete this item?');
+    if (confirmation) db.collection('expenses').doc(id).delete();
 }
