@@ -18,7 +18,7 @@ const getExpenses = async () => {
     displayExpenses(actions);
 }
 
-// Display 'Expenses' as a list on DOM
+// Display 'Expenses' as a table on DOM
 const displayExpenses = (actions) => {
     actions?.forEach(item => {
         const tr = document.createElement('tr');
@@ -31,23 +31,16 @@ const displayExpenses = (actions) => {
 
         // Buttons:
         const tdEditBtn = document.createElement('td')
-        const editBtn = document.createElement('button');
-        editBtn.innerHTML += 'Edit';
-        tdEditBtn.appendChild(editBtn)
+        tdEditBtn.innerHTML += '<button class="btn yellow darken-1 blue-grey-text text-darken-3">Edit</button>'
         tr.appendChild(tdEditBtn);
 
         const tdDeleteBtn = document.createElement('td')
-        const deleteBtn = document.createElement('button');
-        deleteBtn.innerHTML += 'Delete';
-        tdDeleteBtn.appendChild(deleteBtn)
+        tdDeleteBtn.innerHTML += '<button class="btn pink darken-1">Delete</button>'
         tr.appendChild(tdDeleteBtn);
         
         expenseItems.appendChild(tr);
     })
 }
-    
-getExpenses();
-// displayExpenses();
 
 // ATTACH EVENT LISTENER:
 form.addEventListener('submit', (e) => {
@@ -59,12 +52,6 @@ form.addEventListener('submit', (e) => {
             cost: cost.value
         }
 
-        
-        actions.push(itemObj)
-        const li = document.createElement('li');
-        li.appendChild(document.createTextNode(`+ ${name.value}: $${cost.value}  -  [ Edit Btn ]    [ Delete Btn ]`))
-        actionList.appendChild(li)
-
         db.collection('expenses').add(itemObj)
             .then(resp => {
                 name.value = '',
@@ -74,7 +61,7 @@ form.addEventListener('submit', (e) => {
     } else {
         error.textContent = 'Please provide both a name and the cost for an item.'
     }
-
 })
 
+getExpenses();
 
